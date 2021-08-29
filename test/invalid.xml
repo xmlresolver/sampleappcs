@@ -1,0 +1,10 @@
+<!-- N.B. The system identifier is mangled so that it can *only* be
+     found in the ZIP file provided with the sample app. -->
+<!DOCTYPE book PUBLIC "-//Sample//DTD Simple 1.0//EN"
+          "https://xmlresolver.org/ns/zipped/sample.dtd">
+<book>
+<title>A sample book</title>
+<article>
+<book>You can’t put book here.</book>
+</article>
+</book>

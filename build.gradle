@@ -1,0 +1,43 @@
+plugins {
+  id "com.itiviti.dotnet" version "1.7.2"
+}
+
+// Find dotnet
+def dotnetex = null
+// Laboriously construct a search path that includes some default locations
+// plus the users actual path.
+def spath = ["/usr/local/share/dotnet"]
+System.getenv("PATH").split(System.getProperty("path.separator")).each { dir ->
+  spath += [dir]
+}
+spath.each { dir ->
+  if (dotnetex == null) {
+    def fn = new File(dir + "/dotnet")
+    if (fn.exists() && fn.canExecute()) {
+      dotnetex = fn.toString()
+    } else {
+      fn = new File(dir + "/dotnet.exe")
+      if (fn.exists() && fn.canExecute()) {
+        dotnetex = fn.toString()
+      }
+    }
+  }
+}
+
+if (dotnetex == null) {
+  println("WARNING: Failed to find dotnet[.exe]!")
+}
+
+dotnet {
+  dotnetExecutable = dotnetex
+  solution = 'SampleApp/SampleApp.sln'
+  configuration = 'Release'
+  verbosity = 'Normal'
+  projectName = 'SampleApp'
+
+  restore {
+  }
+
+  build {
+  }  
+}

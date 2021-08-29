@@ -1,0 +1,7 @@
+/.gradle
+/SampleApp/SampleApp/bin
+/SampleApp/SampleApp/obj
+/build
+*.DotSettings.user
+.DS_Store
+.idea/
