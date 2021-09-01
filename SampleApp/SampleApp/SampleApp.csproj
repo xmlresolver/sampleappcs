@@ -6,8 +6,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="XmlResolver" Version="0.0.4" />
-      <PackageReference Include="XmlResolverData" Version="0.0.4" />
+      <None Update="NLog.config">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="XmlResolver" Version="0.1.0" />
+      <PackageReference Include="XmlResolverData" Version="0.1.0" />
     </ItemGroup>
 
 </Project>
