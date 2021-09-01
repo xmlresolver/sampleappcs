@@ -6,6 +6,29 @@ This project isn’t (yet) anywhere near as complete or comprehensive as
 [the Java version](https://github.com/xmlresolver/sampleapp), but it does
 demonstrate how the C# XmlResolver library is used.
 
+These few lines are the important bit:
+
+```
+// Create a configuration object
+XmlResolverConfiguration config = new XmlResolverConfiguration();
+
+// If your application references assemblies that have embedded catalogs,
+// add them to the configuration:
+config.SetFeature(ResolverFeature.ASSEMBLY_CATALOG, "XmlResolverData.dll");
+
+// Add any other relevant catalogs:
+config.AddCatalog("./catalog.xml");
+
+// Create a resolver
+Resolver resolver = new Resolver(config);
+
+// Configure the System.XmlReader to use your resolver
+XmlReaderSettings settings = new XmlReaderSettings();
+settings.XmlResolver = resolver;
+
+// Parse your file(s)…
+```
+
 ## Download and build the app
 
 Running `gradlew dotnetBuild` will build the executable.
