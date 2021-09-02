@@ -13,7 +13,7 @@
 
     <ItemGroup>
       <PackageReference Include="XmlResolver" Version="0.1.0" />
-      <PackageReference Include="XmlResolverData" Version="0.1.0" />
+      <PackageReference Include="XmlResolverData" Version="0.1.1" />
     </ItemGroup>
 
 </Project>
